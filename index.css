@@ -1,0 +1,9 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+  background: url('https://chopra.com/sites/default/files/field/image/6dailyhabitsofhappypeople2.jpg') 
+  no-repeat;
+  background-size: cover;
+}
