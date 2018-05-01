@@ -14,15 +14,18 @@
 		
 	</header>
 	<main role="main">
-		<h1>"Insert Tag Line Here"</h1>
-		<h2>"So, what's your main interest?"</h2>
-		<form id="search-form" role="form">
-			<label name="query"></label>
-			<input aria-label='Enter search text' type="text" id="js-query" onfocus="this.value=''">
-			<button type="submit">GO!</button>
-		</form>	
+		<section class="content">
+			<h1>"Insert Tag Line Here"</h1>
+			<h2>"So, what's your main interest?"</h2>
+			<form id="search-form" role="form">
+				<label name="query"></label>
+				<input aria-label='Enter search text' type="text" id="input" onfocus="this.value=''" placeholder="">
+				<button type="submit" id="submit">GO!</button>
+			</form>	
+		</section>
 	</main>
 
 	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="data.js"></script>
 </body>
 </html>

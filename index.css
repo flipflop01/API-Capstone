@@ -2,8 +2,44 @@
 	box-sizing: border-box;
 }
 
-body {
-  background: url('https://chopra.com/sites/default/files/field/image/6dailyhabitsofhappypeople2.jpg') 
-  no-repeat;
-  background-size: cover;
+<----------MAIN PAGE------------->
+
+.content {
+  overflow: auto;
+  position: relative;
 }
+
+.content:before {
+  content: "";
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url('https://ak3.picdn.net/shutterstock/videos/18164323/thumb/1.jpg?i10c=img.resize(height:160)');
+  background-size:cover;
+  width: 110%;
+  height: 110%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#input {
+	height: 30px;
+  	width: 200px;
+}
+
+#submit {
+	background-color: transparent;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	height: 30px;
+  	width: 100px;
+}
+
+<----------------------------------------------------------------------------------->
