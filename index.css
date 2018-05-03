@@ -30,9 +30,13 @@
   filter: blur(5px);
 }
 
-#input {
+input {
 	height: 30px;
   	width: 200px;
+}
+
+input:focus {
+    background-color: lightblue;
 }
 
 #submit {
