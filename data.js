@@ -1,8 +1,8 @@
 const placeHolder = [
 	'Game Of Thrones',
-	'Post Malone',
+	'Red Wine',
 	'Kurt Vonnegut',
 	'Overwatch',
-	'Stranger Things',
+	'90s Hip Hop',
 	'Marvel Comics',
 	'Web Development'];

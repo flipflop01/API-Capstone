@@ -5,24 +5,25 @@
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="INSERT SOMETHING HERE">
 	<link href="index.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
 
-	<header roler="banner">
-		
+	<header roler="banner" class="col-4">
+		<img src="https://www.toastmasters.org/resources/logos-images-and-templates/~/media/C1A977F03426427793CBD457DD3A5B25.ashx">
 	</header>
 	<main role="main">
-		<section class="content">
-			<h1>"Insert Tag Line Here"</h1>
-			<h2>"So, what's your main interest?"</h2>
+		<div class="content col-4">
+			<h1>"Let's expand yourself!"</h1>
+			<h2>"Tell me, what's your main interest?"</h2>
 			<form id="search-form" role="form">
 				<label name="query"></label>
 				<input aria-label='Enter search text' type="text" id="js-input" onfocus="this.value=''" placeholder="" required />
 				<button type="submit" id="submit">GO!</button>
 			</form>	
-		</section>
+		</div>
 	</main>
 
 	<script type="text/javascript" src="index.js"></script>

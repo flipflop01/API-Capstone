@@ -1,12 +1,48 @@
+html {
+	height: 100%;
+}
+
 *{
 	box-sizing: border-box;
 }
 
-<----------MAIN PAGE------------->
+body {
+  font-family: 'Electrolize', sans-serif;
+  /*background: 
+  -webkit-linear-gradient(rgba(50, 190, 255, 1), rgba(50, 255, 217, 0.0) 0%),
+  -webkit-linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 45%, rgba(55, 230, 235, 1) 0%);*/
+  height: 100%;
+  margin: 0;
+}
+
+/*main:hover .content {
+	opacity: 0.8;
+}*/
+
+header {
+	height: 200px;
+	text-align: center;
+}
+
+header img {
+	max-height: 100%;
+	margin-top: 10px;
+}
+
+h1, h2 {
+	font-family: 'Comfortaa', cursive;
+	font-weight: bold;
+	font-size: 40px;
+	font-style: italic;
+	color: /*#4859F9*/ #2016d4;
+	text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 3px #f7f5ea;
+}
 
 .content {
   overflow: auto;
   position: relative;
+  text-align: center;
+  top: 50px;
 }
 
 .content:before {
@@ -30,20 +66,42 @@
   filter: blur(5px);
 }
 
-input {
-	height: 30px;
-  	width: 200px;
+form > * {
+	font-size: 25px;
+	font-family: 'Comfortaa', cursive;
 }
 
-input:focus {
-    background-color: lightblue;
+input {
+	height: 40px;
+  	width: 250px;
+  	background-color: transparent;
+  	border: none;
+  	border-bottom: 3px solid blue;
 }
 
 #submit {
+	border: none;
 	background-color: transparent;
-	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-	height: 30px;
-  	width: 100px;
+	height: 40px;
+  	width: 150px;
+  	color: /*#4859F9*/ #2016d4;
+	text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 2px #f7f5ea;
+	font-weight: bold;
+	font-style: italic;
+	transform: perspective(1px) translateZ(0);
+	transition-duration: 0.3s;
+	transition-property: box-shadow;
+	/*box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);*/
 }
 
-<----------------------------------------------------------------------------------->
+#submit:hover {
+	/*margin: .4em;
+    padding: 1em;*/
+    background: #e6c12f;
+    text-decoration: none;
+    color: #666;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+}
+
+-----------------------------------------------------------------------------------
