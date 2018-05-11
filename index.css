@@ -1,5 +1,5 @@
 html {
-	height: 100%;
+	/*height: 100%;*/
 }
 
 *{
@@ -7,12 +7,11 @@ html {
 }
 
 body {
-  font-family: 'Electrolize', sans-serif;
   /*background: 
   -webkit-linear-gradient(rgba(50, 190, 255, 1), rgba(50, 255, 217, 0.0) 0%),
   -webkit-linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 45%, rgba(55, 230, 235, 1) 0%);*/
-  height: 100%;
-  margin: 0;
+  /*height: auto;*/
+  /*margin: auto;*/
 }
 
 /*main:hover .content {
@@ -66,6 +65,10 @@ h1, h2 {
   filter: blur(5px);
 }
 
+#search-form {
+	text-align: center;
+}
+
 form > * {
 	font-size: 25px;
 	font-family: 'Comfortaa', cursive;
@@ -104,4 +107,41 @@ input {
     -webkit-font-smoothing: antialiased;
 }
 
------------------------------------------------------------------------------------
+/*//////////////////RESULTS PAGE STYLING//////////////*/
+
+.returned-data {
+	width: 100%;
+	height: 100%;
+	/*background-color: blue;*/
+	border: solid blue 1px;
+	margin: auto 0;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+.taste-results, .meetup-results {
+	border: solid black 4px;
+	/*max-width: 50%;*/
+	display: inline-block;
+	width: 35%;
+}
+
+.taste-results {
+	float: left;
+}
+
+.meetup-results {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.indv-result {
+	border: solid black 2px;
+	margin: 4px;
+}

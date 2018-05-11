@@ -16,36 +16,64 @@ $(document).ready(function(){
     });
 
 ////////////////////////////////////////TasteKid API//////////////////////////////////////////////////
-const TasteDiveSearchUrl = "https://tastedive.com/api/similar"
+const TasteDiveSearchUrl = "https://tastedive.com/api/similar?callback=?"
 const TasteDiveAPIKey = "307161-APICapst-JBLGJD7N"
 
 //getDatafromAPIFunction
-function getDatafromTasteDiveAPI(searchTerm, callback) {
+function getDatafromTasteDiveAPI(searchTerm, qType, callback) {
   const settings = {
     url: TasteDiveSearchUrl,
     data: {
       k: TasteDiveAPIKey,
       q: `${searchTerm}`,
+      type: `${qType}`,
       info: 1,
-      limit: 5
+      limit: 5,
+      verbose: 1,
     },
     dataType: 'jsonp',
     type: 'GET',
     success: callback
   };
-  $.getJSON(TasteDiveSearchUrl, settings, callback);
+  $.getJSON(settings, success);
   console.log("getDatafromTasteDiveAPI works");
 }
 
-//renderResults
-/*function renderTasteDiveResults () {
-
+function success(data) {
+  console.log(data);
+  renderTasteDiveResults(data);
 }
 
-function displayTasteDiveResults(data) {
-  let results = data.items.map((item, index) => renderResults(item));
-  $('.search-results').html(results);
-}*/
+//renderResults
+function renderTasteDiveResults(data) {
+  $('.mainContain').html(`<div class="taste-results col-4">
+      <div class='indv-result'>
+        <p>${data.Similar.Results[0].Name}</p>
+        <p>${data.Similar.Results[0].Type}</p>
+        <a href="${data.Similar.Results[0].wUrl}">Wiki Link Here</a>
+      </div>
+      <div class='indv-result'>
+            <p>${data.Similar.Results[1].Name}</p>
+            <p>${data.Similar.Results[1].Type}</p>
+            <a href="${data.Similar.Results[1].wUrl}">Wiki Link Here</a>
+          </div>
+      <div class='indv-result'>
+            <p>${data.Similar.Results[2].Name}</p>
+            <p>${data.Similar.Results[2].Type}</p>
+            <a href="${data.Similar.Results[2].wUrl}">Wiki Link Here</a>
+          </div>
+      <div class='indv-result'>
+            <p>${data.Similar.Results[3].Name}</p>
+            <p>${data.Similar.Results[3].Type}</p>
+            <a href="${data.Similar.Results[3].wUrl}">Wiki Link Here</a>
+          </div>
+      <div class='indv-result'>
+            <p>${data.Similar.Results[4].Name}</p>
+            <p>${data.Similar.Results[4].Type}</p>
+            <a href="${data.Similar.Results[4].wUrl}">Wiki Link Here</a>
+          </div>
+  </div>`);
+}
 
 ///////////////////////////////////////////Meeetup API//////////////////////////////////////////////
 /*const meetupSearchUrl = "http://api.meetup.com"
@@ -89,8 +117,10 @@ function listenSubmit () {
   $('#search-form').submit(event => {
     event.preventDefault();
     let searchTerm = document.getElementById('js-input').value;
+    let qType = document.getElementById("query-type").value;
     console.log(searchTerm);
-    getDatafromTasteDiveAPI(searchTerm, /*displayTasteDiveResults*/);
+    getDatafromTasteDiveAPI(searchTerm, qType);
+    $('.mainContain').html(" ");
     //getDatafromMeetupAPI(searchTerm, displayMeetupResults);
   })
 }

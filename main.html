@@ -15,15 +15,27 @@
 		<img src="https://www.toastmasters.org/resources/logos-images-and-templates/~/media/C1A977F03426427793CBD457DD3A5B25.ashx">
 	</header>
 	<main role="main">
+
 		<div class="content col-4">
-			<h1>"Let's expand yourself!"</h1>
-			<h2>"Tell me, what's your main interest?"</h2>
-			<form id="search-form" role="form">
-				<label name="query"></label>
-				<input aria-label='Enter search text' type="text" id="js-input" onfocus="this.value=''" placeholder="" required />
-				<button type="submit" id="submit">GO!</button>
-			</form>	
+			<div class="mainContain">
+				<h1>"Let's expand yourself!"</h1>
+				<h2>"Tell me, what's your main interest?"</h2>
+				<form id="search-form" role="form">
+					<label name="query"></label>
+							<input aria-label='Enter search text' type="text" id="js-input" onfocus="this.value=''" placeholder="" required /> </br>
+					<label class="question" for="feelings">Search for similar:</label> </br>
+      						<select name="dropdown" id='query-type' required>
+        					<option value="movies">Movies</option>
+        					<option value="books">Books</option>
+        					<option value="authors">Authors</option>
+        					<option value="music">Music</option>
+        					<option value="shows">Shows</option>
+      						</select> </br>
+					<button type="submit" id="submit">GO!</button>
+				</form>	
+			</div>
 		</div>
+
 	</main>
 
 	<script type="text/javascript" src="index.js"></script>
