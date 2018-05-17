@@ -18,7 +18,7 @@ body {
 	opacity: 0.8;
 }*/
 
-header {
+/*header {
 	height: 200px;
 	text-align: center;
 }
@@ -26,6 +26,10 @@ header {
 header img {
 	max-height: 100%;
 	margin-top: 10px;
+}*/
+
+main {
+	margin-top: 200px;
 }
 
 h1, h2 {
@@ -33,15 +37,13 @@ h1, h2 {
 	font-weight: bold;
 	font-size: 40px;
 	font-style: italic;
-	color: /*#4859F9*/ #2016d4;
-	text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 3px #f7f5ea;
+	color: navajowhite;
+	/*text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 3px #f7f5ea;*/
 }
 
 .content {
   overflow: auto;
-  position: relative;
   text-align: center;
-  top: 50px;
 }
 
 .content:before {
@@ -53,7 +55,7 @@ h1, h2 {
   z-index: -1;
 
   display: block;
-  background-image: url('https://ak3.picdn.net/shutterstock/videos/18164323/thumb/1.jpg?i10c=img.resize(height:160)');
+  background-image: url('https://www.liverpoolexpress.co.uk/wp-content/uploads/2014/10/sefton_fireworks-11-750x390.jpg');
   background-size:cover;
   width: 110%;
   height: 110%;
@@ -66,13 +68,13 @@ h1, h2 {
 }
 
 #search-form {
-	text-align: center;
+	/*text-align: center;*/
 }
 
-form > * {
+/*form > * {
 	font-size: 25px;
 	font-family: 'Comfortaa', cursive;
-}
+}*/
 
 input {
 	height: 40px;
@@ -80,15 +82,33 @@ input {
   	background-color: transparent;
   	border: none;
   	border-bottom: 3px solid blue;
+  	font-size: 25px;
+	font-family: 'Comfortaa', cursive;
+	font-color: white;
 }
 
+.question {
+	color: navajowhite;
+	font-size: 20px;
+	
+}
+
+#query-type {
+	height: 30px;
+  	width: 120px;
+  	margin-right: 5px;
+}
+
+
+
 #submit {
+	padding-right: 20px;
 	border: none;
 	background-color: transparent;
-	height: 40px;
-  	width: 150px;
-  	color: /*#4859F9*/ #2016d4;
-	text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 2px #f7f5ea;
+	height: 30px;
+  	width: 160px;
+  	color: /*#4859F9*/ red;
+	/*text-shadow: 0px 0 #f7f5ea, 0 0px #f7f5ea, 0px 0 #f7f5ea, 0 2px #f7f5ea;*/
 	font-weight: bold;
 	font-style: italic;
 	transform: perspective(1px) translateZ(0);

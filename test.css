@@ -1,0 +1,149 @@
+html {
+	height: 100%;
+	background: url("https://www.liverpoolexpress.co.uk/wp-content/uploads/2014/10/sefton_fireworks-11-750x390.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+	height:100%;
+	margin:0;
+}
+
+main {
+	text-align: center;
+	height:100%;
+}
+
+.content {
+	margin-top: 200px;
+	text-align: center;
+	display: inline-flex;
+}
+
+h1, h2 {
+	margin-bottom: 25px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: bold;
+	font-size: 40px;
+	color: navajowhite;
+	text-shadow: 1px 0 #1a1717, 0 1px #1a1717, 1px 0 #1a1717, 0 5px #1a1717;
+}
+
+input {
+	height: 40px;
+  	width: 250px;
+  	background-color: transparent;
+  	border: none;
+  	border-bottom: 3px solid white;
+  	font-size: 25px;
+	font-family: 'Comfortaa', cursive;
+	color: #ff4203;
+	margin-bottom: 5px;
+	text-shadow: 1px 0 #1a1717, 0 1px #1a1717, 1px 0 #1a1717, 0 1px #1a1717;
+}
+
+.question {
+	color: navajowhite;
+	font-size: 25px;
+	text-shadow: 0px 0 #1a1717, 0 0px #1a1717, 0px 0 #1a1717, 0 2px #1a1717;
+	font-family: 'Comfortaa', cursive;
+}
+
+#query-type {
+	height: 30px;
+  	width: 120px;
+  	margin-top: 5px;
+  	font-family: 'Comfortaa', cursive;
+  	background-color: deepskyblue;
+  	font-size: 20px;
+  	color: black;
+  	border-radius: 5px;
+}
+
+#submit {
+	margin-right: 3px;
+	margin-top: 5px;
+	border: none;
+	background-color: transparent;
+	height: 30px;
+  	width: 120px;
+  	color: navajowhite;
+	text-shadow: 2px 0 #14140a, 0 2px #14140a, 2px 0 #14140a, 0 2px #14140a;
+	font-size: 25px;
+	font-weight: bold;
+	transform: perspective(1px) translateZ(0);
+	transition-duration: 0.3s;
+	transition-property: box-shadow;
+	font-family: 'Comfortaa', cursive;
+	padding-top: 3px;
+}
+
+#submit:hover {
+    background: #a7d47e;
+    text-decoration: none;
+    color: white;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    border-radius: 5px;
+
+}
+
+.taste-results, .meetup-results {
+	font-family: 'Comfortaa', cursive;
+	display: inline-block;
+	/*width: 35%;*/
+	color: navajowhite;
+    -webkit-text-stroke-color: black;
+}
+
+h3 {
+	text-shadow: 2px 0 #1a1717, 0 2px #1a1717, 2px 0 #1a1717, 0 2px #1a1717;
+}
+
+.indv-result {
+	border: solid white 2px;
+	margin: 5px;
+	background-color: black;
+	padding: 0px 5px 5px;
+}
+
+a:link {
+	color:dodgerblue;
+}
+
+@media only screen and (max-width: 768px) {
+	option {
+		font-size: 15px;
+	}
+	.content {
+		margin-top: 150px;
+	}
+	p {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 425px){
+	#submit {
+		font-size: 20px;
+	}
+	.question {
+		font-size: 20px;
+	}
+	h1, h2{
+		font-size: 30px;
+	}
+	.content {
+		display: block;
+	}
+}
+
+
+

@@ -1,11 +1,11 @@
 const placeHolder = [
 	'Game Of Thrones',
-	'Red Wine',
+	'Chevelle',
 	'Kurt Vonnegut',
 	'Overwatch',
-	'90s Hip Hop',
-	'Marvel Comics',
-	'Web Development'];
+	'Arcade Fire',
+	'Marvel Avengers',
+	'Stranger Things'];
 
 /*const TasteDiveDom = [
 	<div class="taste-results col-4">

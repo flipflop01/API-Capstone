@@ -15,7 +15,7 @@ $(document).ready(function(){
         },2000);
     });
 
-////////////////////////////////////////TasteKid API//////////////////////////////////////////////////
+////////////////////////////////////////TasteDive API//////////////////////////////////////////////////
 const TasteDiveSearchUrl = "https://tastedive.com/api/similar?callback=?"
 const TasteDiveAPIKey = "307161-APICapst-JBLGJD7N"
 
@@ -35,18 +35,23 @@ function getDatafromTasteDiveAPI(searchTerm, qType, callback) {
     type: 'GET',
     success: callback
   };
-  $.getJSON(settings, success);
+  $.getJSON(settings, tasteSuccess);
   console.log("getDatafromTasteDiveAPI works");
 }
 
-function success(data) {
-  console.log(data);
-  renderTasteDiveResults(data);
+function err(data) {
+    $('.mainContain').html(`<div class="taste-results col-4">
+      <p>Here are some recommendations of similar items</p>
+      <div class='indv-result'>
+        <p>Sorry, no recommendations were found for your search</p>
+      </div>`);
 }
 
 //renderResults
 function renderTasteDiveResults(data) {
-  $('.mainContain').html(`<div class="taste-results col-4">
+  $('.mainContain').html(`
+    <div class="taste-results col-4">
+      <h3>Here are some similar items</h3>
       <div class='indv-result'>
         <p>${data.Similar.Results[0].Name}</p>
         <p>${data.Similar.Results[0].Type}</p>
@@ -72,43 +77,63 @@ function renderTasteDiveResults(data) {
             <p>${data.Similar.Results[4].Type}</p>
             <a href="${data.Similar.Results[4].wUrl}">Wiki Link Here</a>
           </div>
-  </div>`);
+  </div>
+      `);
 }
 
 ///////////////////////////////////////////Meeetup API//////////////////////////////////////////////
-/*const meetupSearchUrl = "http://api.meetup.com"
+const meetupSearchUrl = "https://api.meetup.com/find/groups?callback=?"
 const meetupAPIKey ="43452e79373956592e2a1939544e1d23"
 
 //getDatafromAPIFunction
-function getDatafromMeetupAPI(searchTerm, callback) {
+function getDatafromMeetupAPI(searchTerm, qType, callback) {
   const settings = {
     url: meetupSearchUrl,
     data: {
       key: meetupAPIKey,
-      q: `${searchTerm}`
+      text: `${qType}`,
+      radius: 'smart',
+      page: 5
     },
-    dataType: 'json',
+    dataType: 'jsonp',
     type: 'GET',
     success: callback
   };
-  $.getJSON(meetupSearchUrl, settings, callback);
+  $.getJSON(settings, meetSuccess);
   console.log("Meetup works?");
 }
 
-
-
-//renderResults
-//function renderResults(result)
-
-
-
-
-
-//displayMeetupResults
-function displayMeetupResults(data) {
-  let results = data.items.map((item, index) => renderResults(item));
-  $('.search-results').html(results);
-}*/
+function renderMeetupResults(data) {
+  $('.subContain').html(`
+    <div class="meetup-results col-4">
+      <h3>Here are some groups to check out!</h3>
+      <div class='indv-result'>
+        <p>${data.data[0].name}</p>
+        <p>${data.data[0].city}</p>
+        <a href="${data.data[0].link}">Link to the Group Here</a>
+      </div>
+      <div class='indv-result'>
+        <p>${data.data[1].name}</p>
+        <p>${data.data[1].city}</p>
+        <a href="${data.data[1].link}">Link to the Group Here</a>
+      </div>
+      <div class='indv-result'>
+        <p>${data.data[2].name}</p>
+        <p>${data.data[2].city}</p>
+        <a href="${data.data[2].link}">Link to the Group Here</a>
+      </div>
+      <div class='indv-result'>
+        <p>${data.data[3].name}</p>
+        <p>${data.data[3].city}</p>
+        <a href="${data.data[3].link}">Link to the Group Here</a>
+      </div>
+      <div class='indv-result'>
+        <p>${data.data[4].name}</p>
+        <p>${data.data[4].city}</p>
+        <a href="${data.data[4].link}">Link to the Group Here</a>
+      </div>
+    `);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -119,10 +144,34 @@ function listenSubmit () {
     let searchTerm = document.getElementById('js-input').value;
     let qType = document.getElementById("query-type").value;
     console.log(searchTerm);
+    console.log(qType);
     getDatafromTasteDiveAPI(searchTerm, qType);
-    $('.mainContain').html(" ");
-    //getDatafromMeetupAPI(searchTerm, displayMeetupResults);
+    getDatafromMeetupAPI(searchTerm, qType);
+    alterPage();
+    /*$('.mainContain').html(" ");
+    $(".content").css("display", "inline-flex");
+    $('html').css({height:''});*/
   })
+}
+
+function alterPage() {
+  $('.mainContain').html(" ");
+  /*$(".content").css("display", "inline-flex");
+  $(".content").css("margin-top", "70px")*/
+}
+
+function tasteSuccess(data) {
+  console.log(data);
+  if(data.Similar.Results.length === 0) {
+    err(data);
+  }
+  else {renderTasteDiveResults(data);
+  }
+}
+
+function meetSuccess(data){
+  console.log(data);
+  renderMeetupResults(data);
 }
 
 listenSubmit();
