@@ -22,7 +22,7 @@ main {
 }
 
 .content {
-	margin-top: 200px;
+	margin-top: 100px;
 	text-align: center;
 	display: inline-flex;
 }
@@ -98,7 +98,6 @@ input {
 .taste-results, .meetup-results {
 	font-family: 'Comfortaa', cursive;
 	display: inline-block;
-	/*width: 35%;*/
 	color: navajowhite;
     -webkit-text-stroke-color: black;
 }
@@ -142,12 +141,10 @@ a:link {
 	}
 	.content {
 		display: block;
+		margin-top: 100px;
 	}
-}
-
-@media only screen and (max-width: 425px) {
-	.content {
-		margin-top: 10px;
+	h3 {
+		font-size: 25px;
 	}
 }
 

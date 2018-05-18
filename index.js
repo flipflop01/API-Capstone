@@ -148,16 +148,11 @@ function listenSubmit () {
     getDatafromTasteDiveAPI(searchTerm, qType);
     getDatafromMeetupAPI(searchTerm, qType);
     alterPage();
-    /*$('.mainContain').html(" ");
-    $(".content").css("display", "inline-flex");
-    $('html').css({height:''});*/
   })
 }
 
 function alterPage() {
   $('.mainContain').html(" ");
-  /*$(".content").css("display", "inline-flex");
-  $(".content").css("margin-top", "70px")*/
 }
 
 function tasteSuccess(data) {
