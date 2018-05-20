@@ -31,7 +31,7 @@ h1, h2 {
 	margin-bottom: 25px;
 	font-family: 'Comfortaa', cursive;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 30px;
 	color: navajowhite;
 	text-shadow: 1px 0 #1a1717, 0 1px #1a1717, 1px 0 #1a1717, 0 5px #1a1717;
 }
@@ -51,7 +51,7 @@ input {
 
 .question {
 	color: navajowhite;
-	font-size: 25px;
+	font-size: 20px;
 	text-shadow: 0px 0 #1a1717, 0 0px #1a1717, 0px 0 #1a1717, 0 2px #1a1717;
 	font-family: 'Comfortaa', cursive;
 }
