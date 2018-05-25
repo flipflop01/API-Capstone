@@ -1,7 +1,7 @@
 const placeHolder = [
 	'Game Of Thrones',
 	'Chevelle',
-	'Kurt Vonnegut',
+	"Cat's Cradle",
 	'Overwatch',
 	'Arcade Fire',
 	'Marvel Avengers',

@@ -51,7 +51,7 @@ function err(data) {
 function renderTasteDiveResults(data) {
   $('.mainContain').html(`
     <div class="taste-results col-4">
-      <h3>Here are some similar items</h3>
+      <h4>Here are some similar items</h4>
       <div class='indv-result'>
         <p>${data.Similar.Results[0].Name}</p>
         <p>${data.Similar.Results[0].Type}</p>
@@ -106,7 +106,7 @@ function getDatafromMeetupAPI(searchTerm, qType, callback) {
 function renderMeetupResults(data) {
   $('.subContain').html(`
     <div class="meetup-results col-4">
-      <h3>Here are some groups to check out!</h3>
+      <h4>Here are some groups to check out!</h4>
       <div class='indv-result'>
         <p>${data.data[0].name}</p>
         <p>${data.data[0].city}</p>
@@ -147,12 +147,15 @@ function listenSubmit () {
     console.log(qType);
     getDatafromTasteDiveAPI(searchTerm, qType);
     getDatafromMeetupAPI(searchTerm, qType);
-    alterPage();
+    alterPage(searchTerm);
   })
 }
 
-function alterPage() {
+function alterPage(searchTerm) {
   $('.mainContain').html(" ");
+  $('.header').html(`<img src="https://i.imgur.com/CUzYjJG.png?1">`);
+  $('.bottom-nav').html(`<a class="back" href="index.html">Back to Main</a>`);
+  $('.q-contain').html(`<div class="q-sub"><p>Showing Results for "${searchTerm}"</p></div>`);
 }
 
 function tasteSuccess(data) {
